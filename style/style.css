@@ -119,6 +119,7 @@ picture.picture {
 
     @media (max-width: 768px) {
         .nav-menu {
+            z-index: 999; 
             position: fixed;
             gap: 0;
             margin-block: 0;
@@ -136,10 +137,27 @@ picture.picture {
             border-top: 2px solid black;
     
             .nav-item {
-                /* border: 2px solid black; */
-                width: 7rem;
+                /*border: 2px solid black;
+                */width: 7rem;
                 height: 3rem;
                 margin: .1rem auto;
+                opacity: 0;
+                animation: fadeIn .5s ease forwards;
+                -webkit-animation: fadeIn .5s ease forwards;
+
+                &:nth-child(1) {
+                    animation-delay: .2s;
+                }
+                &:nth-child(2) {
+                    animation-delay: .3s;
+                }
+                &:nth-child(3) {
+                    animation-delay: .4s;
+                }
+                &:nth-child(4) {
+                    animation-delay: .5s;
+                }
+            
             }
 
             .nav-link {
@@ -153,7 +171,9 @@ picture.picture {
     
         .nav-menu.active {
             left: 0;
-        }
+            animation: slideIn .4s ease-out forwards;
+            -webkit-animation: slideIn .4s ease-out forwards;
+}
     
         /* .nav-item {
             margin: 2.5rem 0;
@@ -167,10 +187,6 @@ picture.picture {
                 .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
                 .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
             }
-        }
-        .about-content {
-            flex-direction: column;
-            text-align: center;
         }
     }
 }
@@ -203,6 +219,7 @@ picture.picture {
     }
 
     .hero-img {
+        z-index: 1;
         width: 120px;
         height: 120px;
         border: 2px solid transparent;
@@ -213,9 +230,25 @@ picture.picture {
         -o-border-radius: 50%;
         overflow: hidden;
         margin-block-end: 2rem;
-
-        border: 2px solid var(--primary-color); 
+        border: 2px solid var(--primary-color);
+        animation: pulse 2s infinite ease-in-out;
+        -webkit-animation: pulse 2s infinite ease-in-out;
     }
+}
+
+.content-section {
+    &:nth-child(1) {
+        background-image: none;
+    }
+    height: 100dvh;
+    background-image: url(../images/road.jpg);
+    background-position: center;
+    background-size: cover;
+    border: 2px solid black;
+}
+
+.hidden {
+    display: none;
 }
 
 footer {
@@ -223,4 +256,41 @@ footer {
     padding: 2rem;
     margin-top: 2rem;
     background: #f9f5ed;
+}
+
+@keyframes pulse {
+    /* hero-img effect */
+    0% {
+        scale: 1
+    }
+
+    50% {
+        scale: 1.02
+    }
+
+    100% {
+        scale: 1
+    }
+}
+
+/* navigation effect */
+
+@keyframes slideIn {
+    from {
+        transform:translateX(-100%);
+    }
+    to {
+        transform:translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform :translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform :translateY(0);
+    }
 }

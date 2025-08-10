@@ -1,0 +1,38 @@
+/* animation */
+
+@keyframes pulse {
+    /* hero-img effect */
+    0% {
+        scale: 1.
+    }
+
+    50% {
+        scale: 1.02
+    }
+
+    100% {
+        scale: 1.
+    }
+}
+
+/* navigation effect */
+
+@keyframes slideIn {
+    from {
+        transform:translateX(-100%);
+    }
+    to {
+        transform:translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform :translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform :translateY(0);
+    }
+}
