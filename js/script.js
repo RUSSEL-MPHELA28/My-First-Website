@@ -28,3 +28,17 @@ navLinks.forEach(link => {
     })
 });
 
+// "Read More" button in About section
+const readMoreBtn = document.getElementById('read-more-btn');
+const moreText = document.getElementById('more-about-text');
+
+if (readMoreBtn && moreText) {
+    readMoreBtn.addEventListener('click', () => {
+        moreText.classList.toggle('show');
+        if (moreText.classList.contains('show')) {
+            readMoreBtn.textContent = 'Read Less';
+        } else {
+            readMoreBtn.textContent = 'Read More';
+        }
+    });
+}

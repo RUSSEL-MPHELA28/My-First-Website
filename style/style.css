@@ -52,6 +52,43 @@ picture.picture {
 .pile > * {
     grid-area: pile;
 }
+
+.max-width {
+    max-width: 56rem;
+    margin-inline: auto;
+    padding: 2rem;
+}
+
+/* typography */
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.page-header {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #f9f5ed;
+
+    h2 {
+        margin-bottom: .5rem
+    }
+}
+
 /*  */
 
 .pirmary-header {
@@ -237,19 +274,64 @@ picture.picture {
 }
 
 .content-section {
-    &:nth-child(1) {
+    &:nth-child(1),
+    &:nth-child(3)
+     {
         background-image: none;
     }
-    height: 100dvh;
+    min-height: 100dvh;
     background-image: url(../images/road.jpg);
     background-position: center;
     background-size: cover;
     border: 2px solid black;
 }
 
-.hidden {
-    display: none;
+.about-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+    
+    .about-grid {
+        display: grid;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+
+        @media (min-width: 768px) {
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            text-align: left;
+        }
+
+        .about-picture {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            overflow: hidden;
+            margin-inline: auto;
+        }
+    }
 }
+
+.more-text {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    /* Add margin-top to the transition so it's smooth */
+    transition: max-height 0.7s ease-in-out, opacity 0.5s ease-in-out, margin-top 0.7s ease-in-out;
+}
+
+.more-text.show {
+    /* A value larger than the content's likely height */
+    max-height: 30rem; 
+    opacity: 1;
+    margin-top: 1rem; /* Add space between paragraphs when shown */
+}
+/* .hidden {
+    display: none;
+} */
 
 footer {
     text-align: center;
