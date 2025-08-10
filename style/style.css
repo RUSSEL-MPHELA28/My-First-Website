@@ -275,7 +275,8 @@ h2 {
 
 .content-section {
     &:nth-child(1),
-    &:nth-child(3)
+    &:nth-child(3),
+    &:nth-child(4)
      {
         background-image: none;
     }
@@ -333,6 +334,83 @@ h2 {
     display: none;
 } */
 
+.contact-content {
+
+    .text-center {
+        padding: 4rem 0 0;
+    }
+    .contact-links {
+        display: flex;
+        flex-direction: column;
+        place-content: center;
+        gap: 1rem;
+        padding: 4rem 0;
+    }
+
+    .contact-link {
+        border: 2px solid black;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        width: 200px;
+        height: 50px;
+        margin-inline: auto;
+    }
+
+    .contact-link_effect {
+        position: relative;
+        overflow: hidden;
+        background: transparent;
+        transition: all .45s;
+        -webkit-transition: all .45s;
+        -moz-transition: all .45s;
+        -ms-transition: all .45s;
+        -o-transition: all .45s;
+        border-radius: .5rem;
+        -webkit-border-radius: .5rem;
+        -moz-border-radius: .5rem;
+        -ms-border-radius: .5rem;
+        -o-border-radius: .5rem;
+
+        &::before,
+        &::after{
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            top: 0%;
+            left: -100%;
+            background: black;
+            z-index: -1;
+            transition: all .45s;
+            -webkit-transition: all .45s;
+            -moz-transition: all .45s;
+            -ms-transition: all .45s;
+            -o-transition: all .45s;
+        }
+
+        &:before{
+            opacity: .5;
+        }
+        
+        &:after{
+            transition-delay: .2s;
+        }
+        
+        &:hover,
+        &:focus-visible{
+            color: white;
+        }
+        
+        &:hover:before,
+        &:hover:after,    
+        &:focus-visible:before,
+        &:focus-visible:after{
+            left: 0;
+        }
+    }
+}
 footer {
     text-align: center;
     padding: 2rem;
