@@ -13,6 +13,7 @@ body {
     color: var(--text-color);
     background-color: var(--bg-color);
     line-height: 1.6;
+    position: relative;
 }
 
 .btn {
@@ -91,7 +92,11 @@ h2 {
 
 /*  */
 
-.pirmary-header {
+.primary-header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -113,14 +118,18 @@ h2 {
     }
 
     .nav-link {
-        &:hover,
-        &.active {
+        font-weight: 400;
+        transition: color 0.3s ease;
+
+        &:hover {
             color: #5a2d0c;
             font-weight: 600;
         }
 
-        font-weight: 400;
-        transition: color 0.3s ease;
+        &.active {
+            color: #5a2d0c;
+            font-weight: 600;
+        }
     }
 
 
@@ -229,7 +238,7 @@ h2 {
 }
 
 .hero {
-    /* background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, .3)), url('../images/bg-img.jpg') no-repeat center center/cover; */
+    /* background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, .3)), url('') no-repeat center center/cover; */
     /* IMPORTANT: Replace the background URL with your own hero image */
     /* height: calc(90vh - 40px); */
     min-height: 90dvh;
@@ -275,17 +284,8 @@ h2 {
 
 
 .content-section {
-    &:nth-child(1),
-    &:nth-child(3),
-    &:nth-child(4)
-     {
-        background-image: none;
-    }
     min-height: 100dvh;
-    /* background-image: url(../images/road.jpg); */
-    background-position: center;
-    background-size: cover;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 .about-content {
@@ -313,6 +313,8 @@ h2 {
             object-fit: cover;
             overflow: hidden;
             margin-inline: auto;
+
+            border: 2px solid var(--primary-color);
         }
     }
 }
@@ -326,14 +328,14 @@ h2 {
 }
 
 .more-text.show {
-    /* A value larger than the content's likely height */
     max-height: 30rem; 
     opacity: 1;
     margin-top: 1rem; /* Add space between paragraphs when shown */
 }
-/* .hidden {
+
+.hidden {
     display: none;
-} */
+}
 
 .contact-content {
 
@@ -435,7 +437,7 @@ footer {
 }
 
 /* navigation effect */
-
+/* fix because its not working */
 @keyframes slideIn {
     from {
         transform:translateX(-100%);
