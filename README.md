@@ -26,7 +26,7 @@ _This part is for anyone who wants to download your code and run it locally._
 To get a local copy up and running, follow these simple steps:
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/RUSSEL-MPHELA28/your-repo-name.git](https://github.com/RUSSEL-MPHELA28/your-repo-name.git)
+    git clone [(https://github.com/RUSSEL-MPHELA28/My-First-Website)](https://github.com/RUSSEL-MPHELA28/My-First-Website))
     ```
 2.  **Navigate to the project directory:**
     ```bash
