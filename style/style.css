@@ -1,3 +1,58 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 16px;
+    font-family: "Arial", system-ui, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+input,
+button,
+textarea,
+select,
+::placeholder {
+    font: inherit;
+}
+
+input,
+button,
+textarea {
+    background-color: transparent;
+}
+
+button {
+    cursor: pointer;
+    border: 2px solid black;
+    white-space: nowrap;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        interpolate-size: allow-keywords;
+    }
+}
+/* reset */
 :root {
     --primary-color: #8B4513; /* A warm, earthy brown */
     --secondary-color: #F5DEB3; /* A soft wheat/beige */
