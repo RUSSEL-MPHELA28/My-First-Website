@@ -8,7 +8,7 @@ This is my personal portfolio website, a simple, clean, and responsive site that
 
 ---
 ### **Technologies Used:**
-_This is you where I list the primary languages you used._
+_Primary languages I used._
 
 * HTML5
 * CSS3
