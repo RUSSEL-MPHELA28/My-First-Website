@@ -10,24 +10,33 @@ hamburger.addEventListener("click", () => {
     body.classList.toggle('no-scroll');
 });
 
-document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-    body.classList.remove('no-scroll');
-}));
-
 navLinks.forEach(link => {
     link.addEventListener('click', (event) => {
         event.preventDefault();
         const targetID = link.getAttribute('href');
 
+        // Close mobile menu on link click
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+        body.classList.remove('no-scroll');
+
+        // Update active link state for all links pointing to the same section
+        navLinks.forEach(navLink => navLink.classList.remove('active'));
+        document.querySelectorAll(`.nav-link[href="${targetID}"]`).forEach(activeLink => {
+            activeLink.classList.add('active');
+        });
+
+        // Switch content sections
         const contentSection = document.querySelectorAll('.content-section');
         contentSection.forEach(section  => {
             section.classList.add('hidden');
         });
 
         setTimeout(() => {
-            document.querySelector(targetID).classList.remove('hidden');
+            const targetSection = document.querySelector(targetID);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+            }
         }, 500)
     })
 });
