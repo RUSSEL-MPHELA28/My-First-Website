@@ -16,6 +16,10 @@ body {
     position: relative;
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
+
 .btn {
     &:hover {
         background: #5a2d0c;
