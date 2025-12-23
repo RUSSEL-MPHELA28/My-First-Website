@@ -17,7 +17,8 @@ _Primary languages I used._
 ---
 ### **How to View the Project:**
 
-This project is live and hosted at: **[https://github.com/RUSSEL-MPHELA28/My-First-Website]**
+This project is live and hosted at: 
+**[]**
 
 ---
 ### **Getting Started (For Developers):**
